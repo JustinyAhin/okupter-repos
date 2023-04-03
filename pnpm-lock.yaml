@@ -18,7 +18,7 @@ importers:
       prettier-plugin-tailwindcss: 0.2.6_ur4yhozmpa5c7u2hssnpuxkrki
       turbo: 1.8.8
 
-  apps/sveltekit-file-upload:
+  apps/svelte-file-upload:
     specifiers:
       '@sveltejs/adapter-auto': ^2.0.0
       '@sveltejs/kit': ^1.5.0

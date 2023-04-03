@@ -22,7 +22,10 @@
 
     const response = await fetch('/api/upload', {
       method: 'POST',
-      body: JSON.stringify({ fileData: fileData }),
+      body: JSON.stringify({
+        fileData,
+        fileName: file.name
+      }),
       headers: {
         'Content-Type': 'application/json'
       }

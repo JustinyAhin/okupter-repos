@@ -8,9 +8,14 @@ export const POST = async ({ request }) => {
     throw error(400, { message: 'No file data' });
   }
 
-  const fileData = (requestBody.fileData as string).split(',')[1];
+  console.log(requestBody);
 
-  writeFileSync(`static/avatar.svg`, fileData, 'base64');
+  const { fileData, fileName } = requestBody as {
+    fileData: string;
+    fileName: string;
+  };
+
+  writeFileSync(`static/${fileName}`, fileData.split(',')[1], 'base64');
 
   return json({ success: true, message: 'File uploaded successfully' });
 };

@@ -8,8 +8,6 @@ export const POST = async ({ request }) => {
     throw error(400, { message: 'No file data' });
   }
 
-  console.log(requestBody);
-
   const { fileData, fileName } = requestBody as {
     fileData: string;
     fileName: string;

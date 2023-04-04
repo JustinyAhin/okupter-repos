@@ -1,7 +1,7 @@
 <script lang="ts">
   import '$styles/app.css';
 
-  const authorizedExtensions = ['.jpg', '.jpeg', '.png', '.svg'];
+  const authorizedExtensions = ['.jpg', '.jpeg', '.png', '.webp'];
 
   let fileData: string | undefined;
 

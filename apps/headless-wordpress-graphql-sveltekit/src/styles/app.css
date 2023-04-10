@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+    /* Headings */
+    h1 {
+        @apply text-4xl font-serif font-bold;
+    }
+
+    h2 {
+        @apply text-3xl font-serif font-bold;
+    }
+}

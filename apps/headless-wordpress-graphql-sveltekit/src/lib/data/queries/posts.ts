@@ -1,7 +1,7 @@
 import { client } from '$lib/data/client';
 
 const getSingleBlogPost = async (slug: string) => {
-	const post = client.chain.query.post({ id: slug, idType: 'SLUG' }).get({
+	const post = await client.chain.query.post({ id: slug, idType: 'SLUG' }).get({
 		__typename: true,
 		id: true,
 		dateGmt: true,
@@ -31,4 +31,19 @@ const getSingleBlogPost = async (slug: string) => {
 	return post;
 };
 
-export { getSingleBlogPost };
+const getAllBlogPosts = async () => {
+	const posts = await client.chain.query.posts().get({
+		nodes: {
+			__typename: true,
+			id: true,
+			slug: true,
+			dateGmt: true,
+			title: true,
+			excerpt: true,
+		}
+	});
+
+	return posts?.nodes;
+};
+
+export { getSingleBlogPost, getAllBlogPosts };

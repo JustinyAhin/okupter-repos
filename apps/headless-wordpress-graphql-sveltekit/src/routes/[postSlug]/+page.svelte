@@ -20,9 +20,13 @@
 	<title>{post.title}</title>
 </svelte:head>
 
-<article class="space-y-8">
+<div>
+	<a href="/" class="flex text-indigo-700 bold hover:underline">Back to home</a>
+</div>
+
+<article class="mt-16 space-y-8">
 	<header class="space-y-4">
-		<h1 class="font-serif text-4xl font-bold">{post.title}</h1>
+		<h1>{post.title}</h1>
 
 		<div class="author-box">
 			{#if post.author}

@@ -6,7 +6,7 @@ export const load = async () => {
 
 	if (!posts) {
 		throw error(404, {
-			message: 'Not found'
+			message: 'Posts not found'
 		});
 	}
 

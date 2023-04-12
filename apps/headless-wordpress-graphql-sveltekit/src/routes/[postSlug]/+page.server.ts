@@ -7,7 +7,7 @@ export const load = async ({ params }) => {
 
 	if (!post) {
 		throw error(404, {
-			message: 'The post you are looking for does not exist'
+			message: 'The post you are looking for was not found'
 		});
 	}
 

@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Login</title>
+</svelte:head>
+
 <h1 class="text-4xl font-bold">Login</h1>
 
 <form class="flex flex-col gap-4 p-8 space-y-4 bg-white sm:w-8/12">

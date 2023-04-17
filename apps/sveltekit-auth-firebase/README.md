@@ -1,0 +1,1 @@
+# SvelteKit authentication with Firebase

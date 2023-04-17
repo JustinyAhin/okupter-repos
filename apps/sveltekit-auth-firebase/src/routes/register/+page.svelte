@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 
 	import { createUserWithEmailAndPassword } from 'firebase/auth';
-	import { firebaseApp, firebaseAuth } from '$lib/firebase';
+	import { firebaseAuth } from '$lib/firebase';
 
 	let email: string;
 	let password: string;

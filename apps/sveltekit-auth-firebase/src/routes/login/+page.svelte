@@ -33,7 +33,6 @@
 			})
 			.catch((error) => {
 				const errorCode = error.code;
-				const errorMessage = error.message;
 
 				const errorMatch = errorMessages.find((error) => error.type === errorCode);
 

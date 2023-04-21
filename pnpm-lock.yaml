@@ -41,9 +41,6 @@ importers:
       eslint-config-custom:
         specifier: workspace:^0.0.0
         version: link:../../packages/eslint-config-custom
-      headless-wordpress-graphql-sveltekit:
-        specifier: workspace:^0.0.1
-        version: 'link:'
       postcss:
         specifier: ^8.4.21
         version: 8.4.21
@@ -153,9 +150,6 @@ importers:
       svelte-check:
         specifier: ^3.0.1
         version: 3.1.4(postcss@8.4.21)(svelte@3.58.0)
-      sveltekit-auth-firebase:
-        specifier: workspace:^
-        version: 'link:'
       tailwindcss:
         specifier: ^3.3.1
         version: 3.3.1(postcss@8.4.21)

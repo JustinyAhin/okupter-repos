@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-
-	import { signInWithEmailAndPassword, type User } from 'firebase/auth';
+	import { signInWithEmailAndPassword } from 'firebase/auth';
 	import { firebaseAuth } from '$lib/firebase';
+	import { authUser } from '$lib/authStore';
 
 	const errorMessages = [
 		{
@@ -25,21 +25,12 @@
 		message: ''
 	};
 
-	let authUser:
-		| {
-				uid: string;
-				email: string;
-		  }
-		| undefined = undefined;
-
-	$: console.log(authUser);
-
 	const login = () => {
 		signInWithEmailAndPassword(firebaseAuth, email, password)
 			.then((userCredential) => {
-				authUser = {
+				$authUser = {
 					uid: userCredential.user.uid,
-					email: userCredential.user.email as string
+					email: userCredential.user.email || ''
 				};
 
 				goto('/protected');
@@ -69,7 +60,10 @@
 
 <h1 class="text-4xl font-bold">Login</h1>
 
-<form class="flex flex-col gap-4 p-8 space-y-4 bg-white sm:w-10/12" on:submit|preventDefault={login}>
+<form
+	class="flex flex-col gap-4 p-8 space-y-4 bg-white sm:w-10/12"
+	on:submit|preventDefault={login}
+>
 	<input
 		type="email"
 		placeholder="Email"

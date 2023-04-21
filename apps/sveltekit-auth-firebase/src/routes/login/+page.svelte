@@ -25,8 +25,6 @@
 		message: ''
 	};
 
-	$: console.log($authUser);
-
 	const login = () => {
 		signInWithEmailAndPassword(firebaseAuth, email, password)
 			.then((userCredential) => {

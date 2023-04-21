@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 
-	import { signInWithEmailAndPassword } from 'firebase/auth';
+	import { signInWithEmailAndPassword, type User } from 'firebase/auth';
 	import { firebaseAuth } from '$lib/firebase';
 
 	const errorMessages = [
@@ -18,7 +18,6 @@
 
 	let email: string;
 	let password: string;
-
 	let success: boolean | undefined = undefined;
 
 	let customError = {
@@ -26,10 +25,24 @@
 		message: ''
 	};
 
+	let authUser:
+		| {
+				uid: string;
+				email: string;
+		  }
+		| undefined = undefined;
+
+	$: console.log(authUser);
+
 	const login = () => {
 		signInWithEmailAndPassword(firebaseAuth, email, password)
 			.then((userCredential) => {
-				goto('/profile');
+				authUser = {
+					uid: userCredential.user.uid,
+					email: userCredential.user.email as string
+				};
+
+				goto('/protected');
 			})
 			.catch((error) => {
 				const errorCode = error.code;
@@ -56,7 +69,7 @@
 
 <h1 class="text-4xl font-bold">Login</h1>
 
-<form class="flex flex-col gap-4 p-8 space-y-4 bg-white sm:w-8/12" on:submit|preventDefault={login}>
+<form class="flex flex-col gap-4 p-8 space-y-4 bg-white sm:w-10/12" on:submit|preventDefault={login}>
 	<input
 		type="email"
 		placeholder="Email"

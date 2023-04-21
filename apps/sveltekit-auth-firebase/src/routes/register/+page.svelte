@@ -31,7 +31,7 @@
 <h1 class="text-4xl font-bold">Register</h1>
 
 <form
-	class="flex flex-col gap-4 p-8 space-y-4 bg-white sm:w-8/12"
+	class="flex flex-col gap-4 p-8 space-y-4 bg-white sm:w-10/12"
 	on:submit|preventDefault={register}
 >
 	<input

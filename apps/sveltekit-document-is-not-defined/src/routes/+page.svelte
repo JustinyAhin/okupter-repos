@@ -14,7 +14,6 @@
 	<code>onMount</code>
 </a>
 
-<hr />
 
 <p>
 	Blog post: <a

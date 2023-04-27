@@ -5,9 +5,9 @@
 <h1 class="text-4xl font-bold">SvelteKit authentication with Firebase</h1>
 
 <p>
-	Demo site: <a
-		href="https://sveltekit-auth-firebase.vercel.app/"
+	Blog post: <a
+		href="https://www.okupter.com/blog/client-side-authentication-firebase-sveltekit"
 		class="font-bold hover:text-blue-700 hover:underline"
-		target="_blank">https://sveltekit-auth-firebase.vercel.app/</a
+		target="_blank">https://www.okupter.com/blog/client-side-authentication-firebase-sveltekit</a
 	>
 </p>

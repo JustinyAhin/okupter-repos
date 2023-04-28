@@ -1,5 +1,5 @@
 {
-	"name": "svelte-document-is-not-defined",
+	"name": "sveltekit-document-is-not-defined",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {

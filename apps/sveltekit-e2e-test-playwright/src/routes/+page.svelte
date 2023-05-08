@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { PageData } from './$types';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
+	import type { PageData } from './$types';
 
 	export let data: PageData;
 
@@ -46,7 +46,7 @@
 
 
 <section class="space-y-8">
-	<h1>State in URL: the Svelte approach</h1>
+	<h1>E2E testing with SvelteKit and Playwright</h1>
 
 	<div>
 		<form class="w-full">

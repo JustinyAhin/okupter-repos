@@ -12,4 +12,4 @@ pnpm install
 
 Then run `npx playwright install` to install Playwright's browsers.
 
-You can now run all the tests with `pnpm playwright test` .
+Make sure your the SvelteKit app is running (`pnpm dev`), and then you can now run all the tests with `pnpm playwright test` .

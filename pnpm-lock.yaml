@@ -272,6 +272,54 @@ importers:
         specifier: ^4.3.5
         version: 4.3.5(@types/node@20.1.0)
 
+  apps/sveltekit-github-pages:
+    devDependencies:
+      '@sveltejs/adapter-auto':
+        specifier: ^2.0.0
+        version: 2.0.1(@sveltejs/kit@1.16.2)
+      '@sveltejs/adapter-static':
+        specifier: ^2.0.2
+        version: 2.0.2(@sveltejs/kit@1.16.2)
+      '@sveltejs/kit':
+        specifier: ^1.5.0
+        version: 1.16.2(svelte@3.59.0)(vite@4.3.5)
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^5.45.0
+        version: 5.59.2(@typescript-eslint/parser@5.59.2)(eslint@8.40.0)(typescript@5.0.4)
+      '@typescript-eslint/parser':
+        specifier: ^5.45.0
+        version: 5.59.2(eslint@8.40.0)(typescript@5.0.4)
+      eslint:
+        specifier: ^8.28.0
+        version: 8.40.0
+      eslint-config-prettier:
+        specifier: ^8.5.0
+        version: 8.8.0(eslint@8.40.0)
+      eslint-plugin-svelte:
+        specifier: ^2.26.0
+        version: 2.26.0(eslint@8.40.0)(svelte@3.59.0)
+      prettier:
+        specifier: ^2.8.0
+        version: 2.8.8
+      prettier-plugin-svelte:
+        specifier: ^2.8.1
+        version: 2.10.0(prettier@2.8.8)(svelte@3.59.0)
+      svelte:
+        specifier: ^3.54.0
+        version: 3.59.0
+      svelte-check:
+        specifier: ^3.0.1
+        version: 3.3.1(postcss@8.4.23)(svelte@3.59.0)
+      tslib:
+        specifier: ^2.4.1
+        version: 2.5.0
+      typescript:
+        specifier: ^5.0.0
+        version: 5.0.4
+      vite:
+        specifier: ^4.3.0
+        version: 4.3.5(@types/node@20.1.0)
+
   apps/sveltekit-state-in-url:
     dependencies:
       daisyui:
@@ -1478,6 +1526,14 @@ packages:
       import-meta-resolve: 3.0.0
     dev: true
 
+  /@sveltejs/adapter-static@2.0.2(@sveltejs/kit@1.16.2):
+    resolution: {integrity: sha512-9wYtf6s6ew7DHUHMrt55YpD1FgV7oWql2IGsW5BXquLxqcY9vjrqCFo0TzzDpo+ZPZkW/v77k0eOP6tsAb8HmQ==}
+    peerDependencies:
+      '@sveltejs/kit': ^1.5.0
+    dependencies:
+      '@sveltejs/kit': 1.16.2(svelte@3.59.0)(vite@4.3.5)
+    dev: true
+
   /@sveltejs/kit@1.15.0(svelte@3.58.0)(vite@4.2.1):
     resolution: {integrity: sha512-fvDsW9msxWjDU/j9wwLlxEZ6cpXQYcmcQHq7neJMqibMEl39gI1ztVymGnYqM8KLqZXwNmhKtLu8EPheukKtXQ==}
     engines: {node: ^16.14 || >=18}
@@ -2448,6 +2504,32 @@ packages:
       postcss-safe-parser: 6.0.0(postcss@8.4.23)
       svelte: 3.58.0
       svelte-eslint-parser: 0.26.1(svelte@3.58.0)
+    transitivePeerDependencies:
+      - supports-color
+      - ts-node
+    dev: true
+
+  /eslint-plugin-svelte@2.26.0(eslint@8.40.0)(svelte@3.59.0):
+    resolution: {integrity: sha512-EMcHDOMfMvjxoB5aCGASwDhVHOb/yy0Syer5aPm4GDQpjbPMceacs7LdSDL4xsCIHuOGPdOnc0YIjGpmmuKOlQ==}
+    engines: {node: ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: ^7.0.0 || ^8.0.0-0
+      svelte: ^3.37.0
+    peerDependenciesMeta:
+      svelte:
+        optional: true
+    dependencies:
+      '@eslint-community/eslint-utils': 4.4.0(eslint@8.40.0)
+      '@jridgewell/sourcemap-codec': 1.4.15
+      debug: 4.3.4
+      eslint: 8.40.0
+      esutils: 2.0.3
+      known-css-properties: 0.27.0
+      postcss: 8.4.23
+      postcss-load-config: 3.1.4(postcss@8.4.23)
+      postcss-safe-parser: 6.0.0(postcss@8.4.23)
+      svelte: 3.59.0
+      svelte-eslint-parser: 0.26.1(svelte@3.59.0)
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -3874,6 +3956,21 @@ packages:
       eslint-visitor-keys: 3.4.1
       espree: 9.5.2
       svelte: 3.58.0
+    dev: true
+
+  /svelte-eslint-parser@0.26.1(svelte@3.59.0):
+    resolution: {integrity: sha512-9amXrcFVhv9xrEdCnuIxai22NFQe/NwWVoD8cHGUHPhcU/yXlIHdhZX1L+0iLJszIPdK+iAgImC9IF572OXVWQ==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      svelte: ^3.37.0
+    peerDependenciesMeta:
+      svelte:
+        optional: true
+    dependencies:
+      eslint-scope: 7.2.0
+      eslint-visitor-keys: 3.4.1
+      espree: 9.5.2
+      svelte: 3.59.0
     dev: true
 
   /svelte-hmr@0.15.1(svelte@3.58.0):

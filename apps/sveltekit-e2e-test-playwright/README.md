@@ -10,6 +10,6 @@ After you clone this repository, run the following commands:
 pnpm install
 ```
 
-Then run `pnpx playwright install` to install Playwright's browsers.
+Then run `npx playwright install` to install Playwright's browsers.
 
 You can now run all the tests with `pnpm playwright test` .

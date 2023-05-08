@@ -1,5 +1,5 @@
 {
-	"name": "sveltekit-state-in-url",
+	"name": "sveltekit-e2e-test-playwright",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -12,8 +12,10 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
+		"@playwright/test": "^1.33.0",
 		"@sveltejs/adapter-auto": "^2.0.1",
 		"@sveltejs/kit": "^1.16.2",
+		"@types/node": "^20.1.0",
 		"@typescript-eslint/eslint-plugin": "^5.59.2",
 		"@typescript-eslint/parser": "^5.59.2",
 		"autoprefixer": "^10.4.14",

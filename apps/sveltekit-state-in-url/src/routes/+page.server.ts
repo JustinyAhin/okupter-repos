@@ -1,5 +1,5 @@
-import type { PageServerLoad } from './$types';
 import type { Country } from '$lib/types';
+import type { PageServerLoad } from './$types';
 
 const API_URL = 'https://restcountries.com/v3.1';
 

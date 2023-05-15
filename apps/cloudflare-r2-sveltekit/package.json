@@ -32,6 +32,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@aws-sdk/client-s3": "^3.332.0",
+		"@aws-sdk/s3-request-presigner": "^3.332.0",
 		"@popperjs/core": "^2.11.7",
 		"classnames": "^2.3.2",
 		"flowbite": "^1.6.5",

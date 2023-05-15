@@ -50,6 +50,26 @@
 <main class="max-w-5xl py-12 mx-auto space-y-12">
 	<h1>How to upload files to Cloudflare R2 in SvelteKit</h1>
 
+	<div>
+		<p>
+			Blog post: <a
+				href="https://www.okupter.com/blog/upload-files-cloudflare-r2-in-sveltekit"
+				target="_blank"
+				class="font-bold hover:text-blue-700 hover:underline"
+				>https://www.okupter.com/blog/upload-files-cloudflare-r2-in-sveltekit</a
+			>
+		</p>
+
+		<p>
+			Demo website: <a
+				href="https://cloudflare-r2-sveltekit.vercel.app"
+				target="_blank"
+				class="font-bold hover:text-blue-700 hover:underline"
+				>https://cloudflare-r2-sveltekit.vercel.app</a
+			>
+		</p>
+	</div>
+
 	<Fileupload id="with_helper" class="mb-2" on:change={handleFileUpload} />
 
 	{#if uploadedFileUrl}

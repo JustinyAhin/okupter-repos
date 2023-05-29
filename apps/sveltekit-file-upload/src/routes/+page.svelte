@@ -2,8 +2,6 @@
   import { enhance } from '$app/forms';
   import '$styles/app.css';
 
-  const authorizedExtensions = ['.jpg', '.jpeg', '.png', '.webp'];
-
   export let form;
 </script>
 
@@ -21,7 +19,6 @@
         type="file"
         id="file"
         name="fileToUpload"
-        accept={authorizedExtensions.join(',')}
         required
       />
     </div>

@@ -1,5 +1,5 @@
 {
-	"name": "svelte-file-upload",
+	"name": "sveltekit-file-upload",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {

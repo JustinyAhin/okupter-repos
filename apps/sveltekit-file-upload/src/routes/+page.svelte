@@ -1,48 +1,10 @@
 <script lang="ts">
+  import { enhance } from '$app/forms';
   import '$styles/app.css';
 
   const authorizedExtensions = ['.jpg', '.jpeg', '.png', '.webp'];
 
-  let fileData: string | undefined;
-
-  const readFile = (file: File): Promise<string> => {
-    return new Promise((resolve) => {
-      const reader = new FileReader();
-
-      reader.onload = () => resolve(reader.result as string);
-      reader.readAsDataURL(file);
-    });
-  };
-
-  const handleFileUpload = async (event: SubmitEvent) => {
-    const formData = new FormData(event.target as HTMLFormElement);
-    const file = formData.get('file') as File;
-
-    fileData = await readFile(file);
-
-    const response = await fetch('/api/upload', {
-      method: 'POST',
-      body: JSON.stringify({
-        fileData,
-        fileName: file.name
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-
-    if (!response.ok) {
-      const error = await response.json();
-      alert(error.message);
-    }
-
-    fileData = undefined;
-    (event.target as HTMLFormElement).reset();
-
-    const data = await response.json();
-
-    alert(data.message);
-  };
+  export let form;
 </script>
 
 <svelte:head>
@@ -52,14 +14,32 @@
 <main class="max-w-5xl px-8 mx-auto my-16 space-y-8">
   <h1 class="text-3xl font-bold text-indigo-700">SvelteKit file upload</h1>
 
-  <form on:submit|preventDefault={handleFileUpload}>
+  <form method="post" use:enhance enctype="multipart/form-data">
     <div class="group">
-      <label for="file">Upload yout profile picture</label>
-      <input type="file" id="file" name="file" accept={authorizedExtensions.join(',')} required />
+      <label for="file">Upload your file</label>
+      <input
+        type="file"
+        id="file"
+        name="fileToUpload"
+        accept={authorizedExtensions.join(',')}
+        required
+      />
     </div>
 
     <button type="submit">Submit</button>
   </form>
+
+  {#if form?.error}
+    <div class="p-4 text-white bg-red-500 rounded">
+      <p>{form.message}</p>
+    </div>
+  {/if}
+
+  {#if form?.success}
+    <div class="p-4 text-white bg-green-500 rounded">
+      <p>File uploaded successfully!</p>
+    </div>
+  {/if}
 </main>
 
 <style>
